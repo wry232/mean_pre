@@ -1,0 +1,25 @@
+How to Change MEAN Project on Same Instance on AWS
+
+1.	Log into the instance via bash
+o	cd into the folder with your .pem file in it
+ > ssh -i "{{pem_file}}.pem" ubuntu@ec2-{{SOMENUMBERS}}.us-west-2.compute.amazonaws.com
+ (Desktop ❯ chmod 400 mean_amy.pem
+Desktop ❯ chmod 400 mean_amy.pem
+Desktop ❯ ssh -i "mean_amy.pem" ubuntu@ec2-35-163-207-114.us-west-2.compute.amazonaws.com)
+ 
+2.	Run these commands:
+3.	 > cd var/www
+4.	 > delete {{old_project_folder}}
+5.	 > git clone {{new_project_URL}}
+o	If new project has a different port than the old project:
+ > cd /
+ > sudo vim etc/nginx/sites-evailable/{{project_name}}
+•	change the port number in that file
+•	save and quit the file (:wq)
+ > cd var/www
+ > cd {{new_project}}
+ > npm install
+ > bower install
+ > nginx reload && nginx restart
+ 
+3.	Reload the page in your local machine's browser, to verify that the website changed.

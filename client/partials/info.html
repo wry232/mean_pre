@@ -1,0 +1,44 @@
+
+
+
+<div ng-controller = "friendsController">
+
+<span>Hello,{{getUser()}}</span><br>
+
+
+<a href="#/new_question">Add a Question</a> |
+<a href="#/index">Logout</a>
+<div class="text-right">
+  Search: <input type="text" ng-model='query' placeholder="Search...">
+</div>
+<div class=""col-xl-12"">
+  <table class="table table-striped table-hover" topics>
+    <thead>
+      <tr>
+        <th>Question</th>
+        <th>Category</th>
+        <th>Answers</th>
+        <th>Actions</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat = "que in questions | filter:query">
+        <td>{{que.text}}</td>
+        <td>{{que.category}}</td>
+        <td>{{que.answers.length}}</td>
+        <td><a href="#/edit/{{que._id}}">Show</a> | <a href="#/question/{{que._id}}/new_answer">Answer</a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+  <!-- <form ng-submit = "toCreate()">
+    <input type="submit" value="Create">
+  </form> -->
+
+
+
+
+</div>

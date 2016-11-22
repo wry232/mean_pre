@@ -1,0 +1,15 @@
+AWS:
+vm:computer visualizing at software level computer.
+pem.
+install
+pointing.
+deploy:
+install node, npm, angenex, line by line on platform.
+
+look text around before cope-paste the code.
+ubuntu 14.0.4
+nodemon server.js (but use pm2 start server.js);
+make sure server is running.
+if see permission denied, then use sudo.
+if see complain, run nodemon to see the error.
+use same port. 

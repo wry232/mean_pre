@@ -15,6 +15,7 @@
       })
       .when('/', {
         templateUrl: 'partials/login.html',
+        controller: 'routeController',
         // controller: 'friendsController',
         // controllerAs: 'NC'
       })
@@ -43,6 +44,11 @@
       // when someone uses any other route than above, load the following partial
       .otherwise('/index');
   });
+  app.controller('routeController', ['$scope', '$location', function($scope, $location) {
+    // $scope.currentPath = $location.path() === '/';
+    $scope.location = $location;
+
+  }]);
 
   app.factory('friendsFactory',function($http){
     // console.log('start friendsFactory');
@@ -157,7 +163,7 @@
     var answers =[];
 
 
-$scope.currentPath = $location.path();
+  
 
     function setQuestions(data){
       $scope.questions = data;
@@ -217,15 +223,19 @@ $scope.currentPath = $location.path();
     // $scope.indexAnswer();
 
     $scope.cancel=function(){
+      $location.url('/dashboard');
+    }
+    $scope.cancellogout=function(){
       $location.url('/index');
     }
+
 
     $scope.createQuestion = function(){
 
       friendsFactory.createQuestion($scope.newQuestion,setQuestions);
       $scope.newQuestion = {};
 
-      $location.url('/');
+      $location.url('/dashboard');
     }
     // $scope.createAnswer = function(){
     //
@@ -255,6 +265,9 @@ $scope.currentPath = $location.path();
   //     $s.question = data;
   //   });
   // }
+  $s.cancel=function(){
+      $l.url('/dashboard');
+    }
 
   $s.createAnswerbyId = function(){
     console.log("$s.createAnswerbyId");

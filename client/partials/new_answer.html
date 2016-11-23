@@ -3,7 +3,7 @@
 <div ng-controller = "showFriendIdController">
 <ul>
   <li><a href="#/edit/:id">Back to Question</a></li>
-  <li><a href="#/">Home</a></li>
+  <li><a href="#/dashboard">Home</a></li>
   <li><a href="#/index">Logout</a></li>
 </ul>
 
@@ -11,13 +11,19 @@
 
 <form>
     <span>Question: {{question.text}}</span>
-    <span>Question Id: {{question._id}}</span>
+    <!-- <span>Question Id: {{question._id}}</span> -->
 </form>
 
-<form>
-        Your answer: <textarea ng-model="answer" rows="8" cols="40"></textarea>
-        suportig others for your answer: <textarea name="text" rows="8" cols="40"></textarea>
-        <button ng-click ='cancel()'>Cancel</button>
-        <button ng-click = 'createAnswerbyId(question.id)'>Submit</button>
-      </form>
+<form class="form-horizontal" role="form">
+    <div class="form-group">
+        <label class="col-sm-2 control-label">Your answer: <input ng-model="answer"></input></label>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 control-label">Description: <textarea name="text" rows="4" cols="40"></textarea></label>
+    </div>
+    <div>
+        <button class="btn btn-danger col-md-1 col-md-offset-1" ng-click ='cancel()'>Cancel</button>
+        <button class="btn btn-success col-md-1 col-md-offset-1" ng-click = 'createAnswerbyId(question.id)'>Submit</button>
+    </div>
+</form>
 </div>

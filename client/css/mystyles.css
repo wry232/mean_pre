@@ -44,6 +44,9 @@ div.transbox {
   font-size: 40px;
 }
 
+input {
+	margin-left: 4px;
+}
 
 #sensei {
 	width: 325px;

@@ -4,13 +4,13 @@
   <!-- <h1>Edit Friends!</h1> -->
 <ul>
   <li><a href="#/question/:id/new_answer">Answer this Question</a></li>
-  <li><a href="#/">Home</a></li>
-  <li><a href="#/index">Logout</a></li>
+  <li><a href="#/dashboard">Home</a></li>
+  <li><a href="#/">Logout</a></li>
 </ul>
 
   <form>
       <span>Questions: {{question.text}}</span>
-      <span>{{question._id}}</span>
+     <!--  <span>{{question._id}}</span> -->
       <!-- <span>Here should show the question and its id</span> -->
   </form>
 
@@ -19,9 +19,8 @@
       
       <li>Ansered by: {{answer.user}}</li>
       <li>Answer content: {{answer.text}} <p>Likes: {{answer.likes}}</p>
-        <button type="button" ng-click = "plusLike(answer._id, answer.likes)"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>Like</button>
+        <button type="button" ng-click = "plusLike(answer._id, answer.likes)"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>Like</button> <button type='button'>Add Comments</button><hr>
       </li>
-      <li>{{answer._id}}</li>
-
+      <!-- <li>{{answer._id}}</li> -->
     </ul>
 </div>

@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css" />
   </head>
   <body>
-    <div id="container" ng-controller='friendsController' ng-if="currentPath === '#/'">
+    <div id="container" ng-controller='routeController' ng-if="location.path() != /">
       <div id="headerdiv">
         <div id='navbar'>
           <h2>Hi {{getUser()}}</h2>

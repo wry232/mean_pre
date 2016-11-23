@@ -1,6 +1,6 @@
 <div ng-controller = "friendsController">
-  {{2+3}}{{name}}
-  <a href="#/">Home</a>
+  <!-- {{2+3}}{{name}} -->
+  <a href="#/dashboard">Home</a>
   <a href="#/index">Logout</a>
 <!-- You will attach an ng-model and an ng-submit to your forms (but might want to wait until the next tab, when you have your controllers and factory) -->
 <fieldset><legend>Add a new Question</legend>
@@ -24,7 +24,7 @@
   		</div>
       <div class="form-group">
         <ul>
-          <li><button class="btn btn-success col-md-1 col-md-offset-5" ng-click ='cancel()'>Cancel</button></li>
+          <li><button class="btn btn-danger col-md-1 col-md-offset-5" ng-click ='cancel()'>Cancel</button></li>
           <li><button class="btn btn-success col-md-1 col-md-offset-5" ng-click ='createQuestion()'>Submit</button></li>
         </ul>
 			 
